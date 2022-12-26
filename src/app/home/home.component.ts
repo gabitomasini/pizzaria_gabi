@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
-import localeBr from '@angular/common/locales/pt';
 import { Router } from '@angular/router';
+import { PizzariaService } from '../shared/services/pizzaria.service';
 
 @Component({
   selector: 'app-home',
@@ -10,16 +9,32 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  diaHorario = new Date();
+
+  // diaHorario = new Date();
+  data = new Date();
+  diaHorario = this.data;
+
+
   ultimosPedidos = false;
   receitas = false;
   inventario = false;
 
-  constructor(private router: Router) { }
+  listaPedidos = {};
+
+  constructor(private router: Router, private pizzariaService: PizzariaService) { }
 
 
   ngOnInit(): void {
+    console.log(this.diaHorario)
     this.irParaUltimosPedidos();
+    this.verPedidos();
+  }
+
+  verPedidos(){
+    this.pizzariaService.obterUltimosPedidos().subscribe((res) => {
+      this.listaPedidos = res;
+    })
+    console.log(this.listaPedidos)
   }
 
   irParaUltimosPedidos(){

@@ -1,0 +1,25 @@
+{
+  "ultimos_pedidos": [{
+      "num_pedido": 123,
+      "nome_cliente": "Vitor Bergamini",
+      "infos_pizza": {
+        "quantidade": 1,
+        "nome_sabor": "Calabresa II",
+        "valor": "R$49,90",
+        "origem_pedido": "ifood"
+
+      }
+    },
+    {
+      "num_pedido": 456,
+      "nome_cliente": "Gabriela Tomasini",
+      "infos_pizza": {
+        "quantidade": 1,
+        "nome_sabor": "Frango com Catupiry",
+        "valor": "R$55,90",
+        "origem_pedido": "whatsapp"
+
+      }
+    }
+  ]
+}
