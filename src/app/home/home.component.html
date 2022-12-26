@@ -1,1 +1,28 @@
-<p>home works!</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-4"><p>Pizzaria Gabriela</p></div>
+  </div>
+  <div><p> {{ diaHorario | date:'dd-MM-yyyy, hh:mm'}} </p></div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" (click)="irParaUltimosPedidos()">Últimos pedidos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="irParaReceitas()">Receitas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" (click)="irParaInventario()">Inventário</a>
+    </li>
+  </ul>
+  <div *ngIf="ultimosPedidos">
+    <app-ultimos-pedidos></app-ultimos-pedidos>
+  </div>
+  <div *ngIf="receitas">
+    <app-receitas></app-receitas>
+  </div>
+  <div *ngIf="inventario">
+    <app-inventario></app-inventario>
+  </div>
+</div>
+
